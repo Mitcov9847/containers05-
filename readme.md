@@ -72,6 +72,8 @@
 4. Добавил строку `DirectoryIndex index.php index.html` после строки `DocumentRoot /var/www/html/`.
 5. В конце файла `files/apache2/apache2.conf` добавил строку `ServerName localhost`.
 
+![image](https://github.com/user-attachments/assets/22bee01d-5782-41f5-81ab-a2c578e64098)
+
 ### Конфигурационный файл PHP
 
 1. Открыл файл `files/php/php.ini`.
@@ -82,40 +84,28 @@
     - `post_max_size = 128M`
     - `max_execution_time = 120`
 
+![image](https://github.com/user-attachments/assets/cc2fe1e2-1faf-410b-a84b-4b61b4cd23c8)
+
 ### Конфигурационный файл MariaDB
 
 1. Открыл файл `files/mariadb/50-server.cnf`.
 2. Раскомментировал строку `#log_error = /var/log/mysql/error.log`.
+
+![image](https://github.com/user-attachments/assets/c78be241-68ab-464d-8d66-c4776fdaa7dc)
 
 ---
 
 ## 7. Создание базы данных и пользователя для WordPress
 
 1. Создал базу данных `wordpress` и пользователя `wordpress` с паролем `wordpress` в контейнере MariaDB.
-2. Выполнил следующие команды:
-    ```sql
-    CREATE DATABASE wordpress;
-    CREATE USER 'wordpress'@'localhost' IDENTIFIED BY 'wordpress';
-    GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress'@'localhost';
-    FLUSH PRIVILEGES;
-    EXIT;
-    ```
 
----
-
-## 8. Добавление файла конфигурации WordPress
-
-1. Открыл сайт WordPress по адресу `http://localhost/`.
-2. Указал параметры подключения к базе данных:
-    - Имя базы данных: `wordpress`
-    - Имя пользователя: `wordpress`
-    - Пароль: `wordpress`
-    - Адрес сервера базы данных: `localhost`
-3. Скопировал содержимое файла конфигурации в файл `files/wp-config.php` на компьютере.
+![image](https://github.com/user-attachments/assets/c9e57c99-436f-409d-8624-8fa87a667108)
 
 ---
 
 ## 9. Итоговый результат, вкладка localhost.
+
+![Снимок экрана 2025-04-12 193305](https://github.com/user-attachments/assets/5dbf83ed-62ba-49b4-910d-6b06e1da16c9)
 
 ## 10. Ответы на вопросы
 
